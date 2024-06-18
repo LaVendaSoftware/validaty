@@ -1,3 +1,5 @@
+require "cpf_cnpj"
+
 class CPFValidator < Validaty::AllowBlankBase
   private
 

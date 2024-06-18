@@ -7,7 +7,7 @@ Validaty has basic validations for Rails application
 Add this line to your application's Gemfile:
 
 ```ru
-gem "validaty", "~> 0.0.1"
+gem "validaty", "~> 0.0.2"
 ```
 
 And then execute:
