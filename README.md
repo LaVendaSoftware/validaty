@@ -56,6 +56,24 @@ class Pix < ApplicationRecord
 end
 ```
 
+## Troubleshooting
+
+If you need use CPF or CNPJ validation you need add 2 acronym to `config/initializers/inflections.rb`
+
+```rb
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.acronym "CPF"
+  inflect.acronym "CNPJ"
+end
+```
+
+If you can't add inflections in your application, the suggestion is create an initializer `config/initializers/validaty.rb` with this content:
+
+```rb
+CnpjValidator = CNPJValidator
+CpfValidator = CPFValidator
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/validaty.
