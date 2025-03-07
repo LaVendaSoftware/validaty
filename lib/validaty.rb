@@ -8,6 +8,7 @@ require_relative "validators/cpf_validator"
 require_relative "validators/date_validator"
 require_relative "validators/email_validator"
 require_relative "validators/phone_validator"
+require_relative "validators/url_validator"
 require_relative "validators/uuid_validator"
 
 module Validaty
