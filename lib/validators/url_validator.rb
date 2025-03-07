@@ -2,11 +2,15 @@ require "uri"
 
 class UrlValidator < Validaty::AllowBlankBase
   def validate_each(resource, attribute, value)
-    super
-    return if options[:starts_with].blank?
-    return if value.starts_with?(options[:starts_with])
+    if options[:domain].present? && URI.parse(value).host != options[:domain]
+      resource.errors.add(attribute, :domain, domain: options[:domain])
+    end
 
-    resource.errors.add(attribute, :starts_with, start: options[:starts_with])
+    if options[:starts_with].present? && !value.starts_with?(options[:starts_with])
+      resource.errors.add(attribute, :starts_with, start: options[:starts_with])
+    end
+
+    super
   end
 
   private
