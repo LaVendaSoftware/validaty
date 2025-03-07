@@ -7,7 +7,7 @@ Validaty has basic validations for Rails application
 Add this line to your application's Gemfile:
 
 ```ru
-gem "validaty", "~> 0.0.2"
+gem "validaty", "~> 0.0.3"
 ```
 
 And then execute:
@@ -31,6 +31,7 @@ create_table "pixes", force: :cascade do |t|
   t.uuid "public_id", null: false
   t.integer "kind"
   t.string "key", null: false
+  t.string "url", null: false
   t.boolean "accepted", null: false, default: false
   t.date "schedule_date", null: false
   t.datetime "created_at", null: false
@@ -53,7 +54,26 @@ class Pix < ApplicationRecord
   validates :key, uuid: true, if: :evp?
   validates :accepted, boolean: true
   validates :schedule_date, date: true
+
+  validates :url, presence: true, url: true
+  # OR
+  validates :url, presence: true, url: {domain: "domain.com"}
+  # OR
+  validates :url, presence: true, url: {starts_with: "https://domain.com/path"}
 end
+```
+
+## Translations
+
+If you using url validation with options `:domain` or `:starts_with`, you must add in your locales:
+
+```yaml
+pt-BR:
+  ...
+  errors:
+    messages:
+      domain: "precisa ser do domínio %{domain}"
+      starts_with: "precisa começar com %{start}"
 ```
 
 ## Troubleshooting
