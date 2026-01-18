@@ -17,3 +17,6 @@ module Validaty
 
   class Error < StandardError; end
 end
+
+CpfValidator = CPFValidator unless defined?(CpfValidator)
+CnpjValidator = CNPJValidator unless defined?(CnpjValidator)
