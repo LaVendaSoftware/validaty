@@ -52,7 +52,7 @@ class Pix < ApplicationRecord
   validates :key, cpf: true, if: :cpf?
   validates :key, cnpj: true, if: :cnpj?
   validates :key, email: true, if: :email?
-  validates :key, phone: {country_code: :phone_country}, if: :phone?
+  validates :key, phone: {country_calling_code: :calling_code}, if: :phone?
   validates :key, uuid: true, if: :evp?
   validates :accepted, boolean: true
   validates :schedule_date, date: true
@@ -61,7 +61,7 @@ class Pix < ApplicationRecord
   # OR
   validates :url, presence: true, url: {domain: "domain.com"}
   # OR
-  validates :url, presence: true, url: {starts_with: "https://domain.com/path"}
+  validates :url, presence: true, url: {start_with: "https://domain.com/path"}
 end
 ```
 

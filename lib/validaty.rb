@@ -20,3 +20,4 @@ end
 
 CpfValidator = CPFValidator unless defined?(CpfValidator)
 CnpjValidator = CNPJValidator unless defined?(CnpjValidator)
+UuidValidator = UUIDValidator unless defined?(UuidValidator)

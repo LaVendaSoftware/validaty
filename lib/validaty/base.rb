@@ -1,3 +1,5 @@
+require "active_model"
+
 module Validaty
   class Base < ActiveModel::EachValidator
     def validate_each(resource, attribute, value)

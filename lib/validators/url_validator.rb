@@ -6,8 +6,10 @@ class UrlValidator < Validaty::AllowBlankBase
       resource.errors.add(attribute, :domain, domain: options[:domain])
     end
 
-    if options[:starts_with].present? && !value.to_s.starts_with?(options[:starts_with])
-      resource.errors.add(attribute, :starts_with, start: options[:starts_with])
+    start = options[:start_with].presence || options[:starts_with]
+
+    if start.present? && !value.to_s.start_with?(start)
+      resource.errors.add(attribute, :start_with, start:)
     end
 
     super

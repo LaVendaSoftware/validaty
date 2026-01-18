@@ -10,6 +10,6 @@ en:
       invalid_cpf: "is not a valid CPF"
       boolean: "must be true or false"
       domain: "must be from the %{domain} domain"
-      starts_with: "must start with %{starts_with}"
+      start_with: "must start with '%{start}'"
       too_few_words: "must have at least %{count} words"
       too_many_words: "must have at most %{count} words"

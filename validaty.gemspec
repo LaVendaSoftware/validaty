@@ -35,4 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "cpf_cnpj"
   # https://github.com/carr/phone#examples
   spec.add_dependency "phone"
+  # https://github.com/rails/rails/tree/v8.1.2/activemodel
+  spec.add_development_dependency "activemodel", ">= 0"
 end

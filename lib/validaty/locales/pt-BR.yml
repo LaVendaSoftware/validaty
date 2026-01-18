@@ -10,6 +10,6 @@ pt-BR:
       invalid_cpf: "não é um CPF válido"
       boolean: "deve ser verdadeiro ou falso"
       domain: "precisa ser do domínio %{domain}"
-      starts_with: "precisa começar com %{starts_with}"
+      start_with: "precisa começar com '%{start}'"
       too_few_words: "deve ter no mínimo %{count} palavras"
       too_many_words: "deve ter no máximo %{count} palavras"
