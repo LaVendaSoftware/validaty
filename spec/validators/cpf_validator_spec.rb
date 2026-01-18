@@ -1,5 +1,6 @@
 class CPFDummyModel
   include ActiveModel::Model
+
   attr_accessor :cpf
 
   validates :cpf, cpf: true

@@ -3,7 +3,7 @@ class PhoneDummyModel
 
   attr_accessor :phone, :country_code
 
-  validates :phone, phone: { country_calling_code: :country_code }
+  validates :phone, phone: {country_calling_code: :country_code}
 end
 
 RSpec.describe PhoneValidator do

@@ -11,11 +11,11 @@ class PhoneValidator < Validaty::AllowBlankBase
 
   def prepare_params(resource, attribute, value)
     country_calling_code =
-    resource
-      .send(options[:country_calling_code])
-      .to_s
-      .gsub(/[^0-9]/, "")
-      .presence || DEFAULT_COUNTRY_CALLING_CODE
+      resource
+        .send(options[:country_calling_code])
+        .to_s
+        .gsub(/[^0-9]/, "")
+        .presence || DEFAULT_COUNTRY_CALLING_CODE
 
     value = ["+", country_calling_code, value.to_s.gsub(/[^0-9]/, "")].join
 

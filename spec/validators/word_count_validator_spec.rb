@@ -1,5 +1,6 @@
 class WordCountDummyModel
   include ActiveModel::Model
+
   attr_accessor :name
 
   validates :name, word_count: {min: 2, max: 4}

@@ -1,5 +1,6 @@
 class BooleanDummyModel
   include ActiveModel::Model
+
   attr_accessor :accepted
 
   validates :accepted, boolean: true

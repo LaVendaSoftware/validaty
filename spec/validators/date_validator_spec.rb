@@ -1,5 +1,6 @@
 class DateDummyModel
   include ActiveModel::Model
+
   attr_accessor :schedule_date
 
   validates :schedule_date, date: true

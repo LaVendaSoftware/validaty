@@ -1,5 +1,6 @@
 class CNPJDummyModel
   include ActiveModel::Model
+
   attr_accessor :cnpj
 
   validates :cnpj, cnpj: true

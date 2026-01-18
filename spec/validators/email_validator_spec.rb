@@ -1,5 +1,6 @@
 class EmailDummyModel
   include ActiveModel::Model
+
   attr_accessor :email
 
   validates :email, email: true

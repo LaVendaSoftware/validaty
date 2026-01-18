@@ -1,5 +1,6 @@
 class UUIDDummyModel
   include ActiveModel::Model
+
   attr_accessor :pid
 
   validates :pid, uuid: true

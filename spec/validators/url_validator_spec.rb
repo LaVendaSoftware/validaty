@@ -1,5 +1,6 @@
 class UrlDummyModel
   include ActiveModel::Model
+
   attr_accessor :url
 
   validates :url, url: true
@@ -7,6 +8,7 @@ end
 
 class UrlDummyModelWithDomain
   include ActiveModel::Model
+
   attr_accessor :url
 
   validates :url, url: {domain: "example.com"}
@@ -14,9 +16,10 @@ end
 
 class UrlDummyModelWithStartsWith
   include ActiveModel::Model
+
   attr_accessor :url
 
-  validates :url, url: { start_with: "https://" }
+  validates :url, url: {start_with: "https://"}
 end
 
 RSpec.describe UrlValidator do
