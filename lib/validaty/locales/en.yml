@@ -1,0 +1,13 @@
+en:
+  errors:
+    messages:
+      invalid_url: "is not a valid URL"
+      invalid_uuid: "is not a valid UUID"
+      invalid_phone: "is not a valid phone number"
+      invalid_email: "is not a valid email"
+      invalid_date: "is not a valid date"
+      invalid_cnpj: "is not a valid CNPJ"
+      invalid_cpf: "is not a valid CPF"
+      boolean: "must be true or false"
+      domain: "must be from the %{domain} domain"
+      starts_with: "must start with %{starts_with}"

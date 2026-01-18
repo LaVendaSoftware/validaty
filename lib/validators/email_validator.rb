@@ -8,6 +8,6 @@ class EmailValidator < Validaty::AllowBlankBase
   end
 
   def default_message_error
-    :invalid
+    :invalid_email
   end
 end

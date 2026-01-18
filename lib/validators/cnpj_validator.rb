@@ -8,6 +8,6 @@ class CNPJValidator < Validaty::AllowBlankBase
   end
 
   def default_message_error
-    :invalid
+    :invalid_cnpj
   end
 end

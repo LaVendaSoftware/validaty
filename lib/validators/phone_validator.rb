@@ -16,6 +16,6 @@ class PhoneValidator < Validaty::AllowBlankBase
   end
 
   def default_message_error
-    :invalid
+    :invalid_phone
   end
 end

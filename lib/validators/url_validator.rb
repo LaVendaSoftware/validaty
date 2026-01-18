@@ -23,6 +23,6 @@ class UrlValidator < Validaty::AllowBlankBase
   end
 
   def default_message_error
-    :invalid
+    :invalid_url
   end
 end
