@@ -1,3 +1,5 @@
+require "date"
+
 class DateValidator < Validaty::AllowBlankBase
   private
 
@@ -9,6 +11,6 @@ class DateValidator < Validaty::AllowBlankBase
   end
 
   def default_message_error
-    :invalid
+    :invalid_date
   end
 end

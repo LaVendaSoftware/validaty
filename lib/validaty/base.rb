@@ -1,3 +1,5 @@
+require "active_model"
+
 module Validaty
   class Base < ActiveModel::EachValidator
     def validate_each(resource, attribute, value)
@@ -5,7 +7,7 @@ module Validaty
 
       return if valid_value?(value)
 
-      resource.errors.add(attribute, (options[:message] || default_message_error))
+      resource.errors.add(attribute, options[:message] || default_message_error)
     end
 
     private

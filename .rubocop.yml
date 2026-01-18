@@ -1,7 +1,4 @@
 require:
-  - rubocop-rails
-  - rubocop-factory_bot
-  - rubocop-capybara
   - rubocop-rspec
   - rubocop-rake
 
@@ -10,5 +7,7 @@ inherit_gem:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.3
-  TargetRailsVersion: 7.1
+  TargetRubyVersion: 3.4
+
+RSpec/MultipleExpectations:
+  Max: 2

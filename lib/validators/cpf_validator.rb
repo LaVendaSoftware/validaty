@@ -8,6 +8,6 @@ class CPFValidator < Validaty::AllowBlankBase
   end
 
   def default_message_error
-    :invalid
+    :invalid_cpf
   end
 end

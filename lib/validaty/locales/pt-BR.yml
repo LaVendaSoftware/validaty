@@ -1,0 +1,15 @@
+pt-BR:
+  errors:
+    messages:
+      invalid_url: "não é uma URL válida"
+      invalid_uuid: "não é um UUID válido"
+      invalid_phone: "não é um telefone válido"
+      invalid_email: "não é um email válido"
+      invalid_date: "não é uma data válida"
+      invalid_cnpj: "não é um CNPJ válido"
+      invalid_cpf: "não é um CPF válido"
+      boolean: "deve ser verdadeiro ou falso"
+      domain: "precisa ser do domínio %{domain}"
+      start_with: "precisa começar com '%{start}'"
+      too_few_words: "deve ter no mínimo %{count} palavras"
+      too_many_words: "deve ter no máximo %{count} palavras"

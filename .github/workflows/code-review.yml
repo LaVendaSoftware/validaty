@@ -12,10 +12,10 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - "3.0.6"
-          - "3.1.4"
-          - "3.2.3"
-          - "3.3.2"
+          - "4.0.1"
+          - "3.4.8"
+          - "3.3.10"
+          - "3.2.10"
 
     steps:
       - name: Check out code
@@ -27,8 +27,8 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
 
-      - name: Run RSpec
-        run: bin/rspec
-
       - name: Run RuboCop
         run: bin/rubocop
+
+      - name: Run RSpec
+        run: bin/rspec

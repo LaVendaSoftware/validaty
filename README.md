@@ -7,7 +7,7 @@ Validaty has basic validations for Rails application
 Add this line to your application's Gemfile:
 
 ```ru
-gem "validaty", "~> 0.0.3"
+gem "validaty", "~> 0.0.5"
 ```
 
 And then execute:
@@ -28,7 +28,8 @@ Imagine this schema:
 
 ```rb
 create_table "pixes", force: :cascade do |t|
-  t.uuid "public_id", null: false
+  t.uuid "pid", null: false
+  t.string "name", null: false
   t.integer "kind"
   t.string "key", null: false
   t.string "url", null: false
@@ -45,12 +46,13 @@ You should validate this way:
 class Pix < ApplicationRecord
   enum :kind, {cpf: 0, cnpj: 1, email: 2, phone: 3, evp: 4}
 
-  validates :public_id, uuid: true
+  validates :pid, uuid: true
+  validates :name, presence: true, word_count: {min: 3, max: 10}
   validates :kind, presence: true
   validates :key, cpf: true, if: :cpf?
   validates :key, cnpj: true, if: :cnpj?
   validates :key, email: true, if: :email?
-  validates :key, phone: {country_code: :phone_country}, if: :phone?
+  validates :key, phone: {country_calling_code: :calling_code}, if: :phone?
   validates :key, uuid: true, if: :evp?
   validates :accepted, boolean: true
   validates :schedule_date, date: true
@@ -59,39 +61,8 @@ class Pix < ApplicationRecord
   # OR
   validates :url, presence: true, url: {domain: "domain.com"}
   # OR
-  validates :url, presence: true, url: {starts_with: "https://domain.com/path"}
+  validates :url, presence: true, url: {start_with: "https://domain.com/path"}
 end
-```
-
-## Translations
-
-If you using url validation with options `:domain` or `:starts_with`, you must add in your locales:
-
-```yaml
-pt-BR:
-  ...
-  errors:
-    messages:
-      domain: "precisa ser do domínio %{domain}"
-      starts_with: "precisa começar com %{start}"
-```
-
-## Troubleshooting
-
-If you need use CPF or CNPJ validation you need add 2 acronym to `config/initializers/inflections.rb`
-
-```rb
-ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.acronym "CPF"
-  inflect.acronym "CNPJ"
-end
-```
-
-If you can't add inflections in your application, the suggestion is create an initializer `config/initializers/validaty.rb` with this content:
-
-```rb
-CnpjValidator = CNPJValidator
-CpfValidator = CPFValidator
 ```
 
 ## Contributing
