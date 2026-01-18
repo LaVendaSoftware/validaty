@@ -10,6 +10,7 @@ require_relative "validators/email_validator"
 require_relative "validators/phone_validator"
 require_relative "validators/url_validator"
 require_relative "validators/uuid_validator"
+require_relative "validators/word_count_validator"
 
 module Validaty
   I18n.load_path += Dir[File.join(__dir__, "validaty/locales/*.yml")]
