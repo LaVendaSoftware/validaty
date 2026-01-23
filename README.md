@@ -30,6 +30,7 @@ Imagine this schema:
 create_table "pixes", force: :cascade do |t|
   t.uuid "pid", null: false
   t.string "name", null: false
+  t.string "zip_code", null: false
   t.integer "kind"
   t.string "key", null: false
   t.string "url", null: false
@@ -48,6 +49,7 @@ class Pix < ApplicationRecord
 
   validates :pid, uuid: true
   validates :name, presence: true, word_count: {min: 3, max: 10}
+  validates :zip_code, brazilian_zip_code: true
   validates :kind, presence: true
   validates :key, cpf: true, if: :cpf?
   validates :key, cnpj: true, if: :cnpj?
