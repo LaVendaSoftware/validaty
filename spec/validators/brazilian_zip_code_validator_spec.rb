@@ -1,5 +1,6 @@
 class DummyModel
   include ActiveModel::Model
+
   attr_accessor :zip_code
 
   validates :zip_code, brazilian_zip_code: true
