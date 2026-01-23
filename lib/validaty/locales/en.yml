@@ -8,6 +8,7 @@ en:
       invalid_date: "is not a valid date"
       invalid_cnpj: "is not a valid CNPJ"
       invalid_cpf: "is not a valid CPF"
+      invalid_zip_code: "is not a valid CEP"
       boolean: "must be true or false"
       domain: "must be from the %{domain} domain"
       start_with: "must start with '%{start}'"
