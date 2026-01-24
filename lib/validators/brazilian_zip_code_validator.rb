@@ -4,7 +4,11 @@ class BrazilianZipCodeValidator < Validaty::AllowBlankBase
   private
 
   def valid_value?(value)
-    value.match?(ZIP_CODE_REGEX)
+    ActiveSupport::Deprecation
+      .new("0.0.7", "Validaty")
+      .warn("`brazilian_zip_code` is deprecated. Use `brazilian_postal_code` instead.")
+
+    super
   end
 
   def default_message_error

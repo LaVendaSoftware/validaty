@@ -7,7 +7,7 @@ class DummyModel
 end
 
 RSpec.describe BrazilianZipCodeValidator do
-  subject(:model) { DummyModel.new(zip_code: zip_code) }
+  subject(:model) { DummyModel.new(zip_code:) }
 
   context "when zip_code is nil" do
     let(:zip_code) { nil }
@@ -25,6 +25,12 @@ RSpec.describe BrazilianZipCodeValidator do
     let(:zip_code) { "12345-678" }
 
     it { expect(model).to be_valid }
+
+    it "emits a deprecation warning" do
+      expect {
+        model.valid?
+      }.to output(/`brazilian_zip_code` is deprecated/).to_stderr
+    end
   end
 
   context "when zip code is valid without dash" do
