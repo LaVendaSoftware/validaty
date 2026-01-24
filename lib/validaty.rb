@@ -3,6 +3,7 @@ require_relative "validaty/base"
 require_relative "validaty/allow_blank_base"
 
 require_relative "validators/boolean_validator"
+require_relative "validators/brazilian_postal_code_validator"
 require_relative "validators/brazilian_zip_code_validator"
 require_relative "validators/cnpj_validator"
 require_relative "validators/cpf_validator"
