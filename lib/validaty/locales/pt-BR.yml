@@ -8,7 +8,7 @@ pt-BR:
       invalid_date: "não é uma data válida"
       invalid_cnpj: "não é um CNPJ válido"
       invalid_cpf: "não é um CPF válido"
-      invalid_zip_code: "não é um CEP válido"
+      invalid_postal_code: "não é um CEP válido"
       boolean: "deve ser verdadeiro ou falso"
       domain: "precisa ser do domínio %{domain}"
       start_with: "precisa começar com '%{start}'"

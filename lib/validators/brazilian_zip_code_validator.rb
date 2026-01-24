@@ -1,13 +1,11 @@
-class BrazilianZipCodeValidator < Validaty::AllowBlankBase
-  ZIP_CODE_REGEX = /\A\d{5}-?\d{3}\z/
-
+class BrazilianZipCodeValidator < BrazilianPostalCodeValidator
   private
 
   def valid_value?(value)
-    value.match?(ZIP_CODE_REGEX)
-  end
+    ActiveSupport::Deprecation
+      .new("0.0.7", "Validaty")
+      .warn("`brazilian_zip_code` is deprecated. Use `brazilian_postal_code` instead.")
 
-  def default_message_error
-    :invalid_zip_code
+    super
   end
 end
